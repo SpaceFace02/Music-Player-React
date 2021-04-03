@@ -1,0 +1,20 @@
+.song-container {
+  min-height: 74vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; // This centers along y axis, i.e vertically.
+  flex-direction: column; // This pushes items down, if we put row they would flex across a single row, but this flexes column wise.
+  img {
+    width: 25%;
+    border-radius: 50%;
+  }
+  h2 {
+    padding: 2rem 1rem 1rem 1rem;
+    font-weight: bolder;
+  }
+  h3 {
+    padding: 0.1rem;
+    font-size: 1.1rem;
+    font-weight: lighter;
+  }
+}
