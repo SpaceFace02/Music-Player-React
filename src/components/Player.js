@@ -10,9 +10,6 @@ const Player = ({
   songInfo,
   setSongInfo,
 }) => {
-<<<<<<< HEAD
-  // We don't care about the initial value, only after a song is played, can you pause the music.
-=======
   // Use Effect, when the current song state changes, we also want the Library UI to update simultaneosly, hence we use useEffect.
 
   useEffect(() => {
@@ -29,7 +26,6 @@ const Player = ({
       currentTime: 0,
     });
   }, [currentSong]);
->>>>>>> parent of 08e1cba (App Complete)
 
   const getTime = (time) => {
     let noPrefixTime = Math.floor(time % 60);
@@ -62,8 +58,6 @@ const Player = ({
     });
   };
 
-<<<<<<< HEAD
-=======
   const skipTrackHandler = async (direction) => {
     //   Well here we can't do song.active as we havent added the functionality to change active state when you click the skip forwards or backwards button. So the first one works, coz that's active and doesn't work afterwards.
     let currentIndex = songs.findIndex((song) => song.id === currentSong.id);
@@ -102,7 +96,7 @@ const Player = ({
     background: `linear-gradient(to right ,${currentSong.color[0]}, ${currentSong.color[1]} )`,
   };
 
->>>>>>> parent of 08e1cba (App Complete)
+  // >>>>>>> parent of 08e1cba (App Complete
   return (
     <div className="player-container">
       <div className="time-control">
