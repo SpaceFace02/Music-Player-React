@@ -10,18 +10,18 @@ const utils = () => {
         "https://chillhop.com/wp-content/uploads/2021/02/70a56749b8b89815fa75446030c6ba57d2c34de7-1024x1024.jpg",
       id: uuidv4(),
       active: true,
-      color: ["#d57ed6", "#060d29"],
-      audio: "https://mp3.chillhop.com/serve.php/?mp3=14980",
+      color: ["#E1B43A", "#84D9AB"],
+      audio: "https://mp3.chillhop.com/serve.php/?mp3=13091",
     },
     {
-      name: "Leaves covered by snow",
-      artist: "No Spirit",
+      name: "Splendour",
+      artist: "Aari God",
       cover:
-        "https://chillhop.com/wp-content/uploads/2020/07/4b06cedf68f3f842d3a0fc13ae62564dec6056c8-1024x1024.jpg",
+        "https://chillhop.com/wp-content/uploads/2021/02/7f102bdde417f6ead9a120b2b931449e5c12b4da-1024x1024.jpg",
       id: uuidv4(),
       active: false,
-      color: ["#CA6379", "#3F598A"],
-      audio: "https://mp3.chillhop.com/serve.php/?mp3=14981",
+      color: ["#A8BD74", "#491A18"],
+      audio: "https://mp3.chillhop.com/serve.php/?mp3=13010",
     },
     {
       name: "Directions",
@@ -31,29 +31,31 @@ const utils = () => {
       id: uuidv4(),
       active: false,
       color: ["#A7A7E0", "#CD8AB6"],
-      audio: "https://mp3.chillhop.com/serve.php/?mp3=14982",
+      audio: "https://mp3.chillhop.com/serve.php/?mp3=11224",
     },
     {
-      name: "Cabin In the Woods",
-      artist: "Jim Spendlove",
+      name: "Belly Breathing",
+      artist: "Birocratic",
       cover:
-        "https://chillhop.com/wp-content/uploads/2020/09/2899f7cc22ab12e17d0119819aac3ca9dbab46e6-1024x1024.jpg",
+        "https://chillhop.com/wp-content/uploads/2020/07/5c2d5b05dfc98afb5ed850ca918f732445b8ca1e-1024x1024.jpg",
       id: uuidv4(),
       active: false,
-      color: ["#814F38", "#DB8463"],
-      audio: "https://mp3.chillhop.com/serve.php/?mp3=14983",
+      color: ["#DF8D8F", "#7C98BD"],
+      audio: "https://mp3.chillhop.com/serve.php/?mp3=2060",
     },
     {
-      name: "Wanderlust",
-      artist: "Knoyxx",
+      name: "Sugarless",
+      artist: "The Field Tapes",
       cover:
-        "https://chillhop.com/wp-content/uploads/2020/09/88e7eb711f8c71d87fc102e97cf91e36f692348d-1024x1024.jpg",
+        "https://chillhop.com/wp-content/uploads/2020/11/8a0c857ddad531279d0757f5362380a6837b1b69-1024x1024.jpg",
       id: uuidv4(),
       active: false,
-      color: ["#75AC85", "#CC8C61"],
-      audio: "https://mp3.chillhop.com/serve.php/?mp3=14984",
+      color: ["#E3C47D", "#7A8D7B"],
+      audio: "https://mp3.chillhop.com/serve.php/?mp3=11236",
     },
   ];
 };
 
 export default utils;
+
+// Knoyxx is a badass name, grab it before someone else does.

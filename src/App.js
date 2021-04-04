@@ -11,6 +11,7 @@ const App = () => {
   const [currentSong, setCurrentSong] = useState(songs[0]);
 
   const [playing, setPlaying] = useState(false);
+  // We don't care about the initial value, only after a song is played, can you pause the music.
   const audioRef = useRef(null);
 
   const [songInfo, setSongInfo] = useState({
@@ -25,16 +26,29 @@ const App = () => {
     // console.log(e.target.duration);
     const current = e.target.currentTime;
     const duration = e.target.duration;
+    console.log(current);
+
+    const roundedCurrent = Math.round(current);
+    const roundedDuration = Math.round(duration);
+    const percentage = Math.round((roundedCurrent / roundedDuration) * 100);
+    // console.log(percentage);
 
     setSongInfo({
       ...songInfo,
       currentTime: current,
       durationTime: duration,
+      animationPercentage: percentage,
     });
   };
 
   const [libraryStatus, setLibraryStatus] = useState(false);
 
+  const songEndHandler = async () => {
+    let currentIndex = songs.findIndex((song) => song.id === currentSong.id);
+    await setCurrentSong(songs[(currentIndex + 1) % songs.length]);
+
+    if (playing) audioRef.current.play();
+  };
   return (
     <div className="App">
       <Nav libraryStatus={libraryStatus} setLibraryStatus={setLibraryStatus} />
@@ -48,6 +62,7 @@ const App = () => {
         audioRef={audioRef}
         songInfo={songInfo}
         setSongInfo={setSongInfo}
+        setSongs={setSongs}
       />
       <Library
         currentSong={currentSong}
@@ -67,6 +82,7 @@ const App = () => {
         ref={audioRef}
         src={currentSong.audio}
         onLoadedMetadata={timeUpdateHandler}
+        onEnded={songEndHandler}
       ></audio>
     </div>
   );
