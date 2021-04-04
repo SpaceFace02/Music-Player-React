@@ -31,3 +31,38 @@
     padding: 0.2rem;
   }
 }
+<<<<<<< HEAD
+=======
+
+// input[type='range']:focus , we can also do this, but as thre's only 1 input, we don't do it.
+input:focus {
+  outline: none;
+}
+
+input::-webkit-slider-thumb {
+  //   -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  //   background: rgb(163, 163, 255);
+}
+
+.track {
+  background-color: blue;
+  width: 100%;
+  height: 1rem;
+  position: relative;
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.animate-track {
+  background: gray;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(0%);
+  pointer-events: none;
+}
+>>>>>>> parent of 08e1cba (App Complete)
