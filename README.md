@@ -1,6 +1,6 @@
 # Chill Hop Music Player Web App
 
-## Website to try out the Chill Hop Music Player - [https://chillhop-audio.netlify.app/](https://chillhop-audio.netlify.app/)
+### Website to try out the Chill Hop Music Player - [https://chillhop-audio.netlify.app/](https://chillhop-audio.netlify.app/)
 
 ### A Unique and Minimal Music Player with Complex State Management and a beautiful front-end made using react.
 
