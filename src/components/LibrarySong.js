@@ -1,4 +1,5 @@
 import React from "react";
+// import { playAudio } from "../PromiseFn";
 
 const LibrarySong = ({
   currentSong,
@@ -13,9 +14,11 @@ const LibrarySong = ({
   setSongInfo,
   setSongs,
 }) => {
-  const selectSongHandler = () => {
-    console.log(id);
+  const selectSongHandler = async () => {
     // filter returns us an array, so we need to access the first element.
+
+    const selectedSong = songs.filter((song) => song.id === id);
+    await setCurrentSong(selectedSong[0]);
 
     //  Set Active Song
     const newSongsActive = songs.map((song) => {
@@ -28,15 +31,7 @@ const LibrarySong = ({
 
     setSongs(newSongsActive);
 
-    const selectedSong = song;
-    setCurrentSong(selectedSong);
-
-    if (playing) {
-      const playPromise = audioRef.current.play();
-      if (playPromise !== undefined) {
-        playPromise.then((audio) => audioRef.current.play());
-      }
-    }
+    if (playing) audioRef.current.play();
   };
 
   return (

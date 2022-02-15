@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaPlay, FaPause, FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
 const Player = ({
   songs,
   currentSong,
+  setCurrentSong,
   playing,
   setPlaying,
   audioRef,
   songInfo,
   setSongInfo,
+  setSongs,
 }) => {
   // Use Effect, when the current song state changes, we also want the Library UI to update simultaneosly, hence we use useEffect.
 
@@ -96,30 +98,43 @@ const Player = ({
     background: `linear-gradient(to right ,${currentSong.color[0]}, ${currentSong.color[1]} )`,
   };
 
-  // >>>>>>> parent of 08e1cba (App Complete
   return (
     <div className="player-container">
       <div className="time-control">
         <p>{getTime(songInfo.currentTime)}</p>
         {/* No need to format the duration time this time as its internal and its just the whole duration of the song. */}
-        <input
-          min={0}
-          max={songInfo.durationTime || 0}
-          value={songInfo.currentTime}
-          type="range"
-          onChange={dragHandler}
-        />
-        <p>{getTime(songInfo.durationTime)}</p>
+        <div className="track">
+          <input
+            min={0}
+            max={songInfo.durationTime || 0}
+            value={songInfo.currentTime}
+            type="range"
+            onChange={dragHandler}
+            style={backgroundGradientColor}
+          />
+          <div className="animate-track" style={trackAnim}></div>
+        </div>
+
+        <p>{songInfo.durationTime ? getTime(songInfo.durationTime) : "0:00"}</p>
       </div>
       <div className="play-control">
-        <FaAngleLeft className="skip-backward" size="2em" />
+        <FaAngleLeft
+          className="skip-backward"
+          size="2em"
+          //   IF AND ONLY IF YOU ARE INVOKING A FUNCTION WITHIN THE ONLICK DUE TO SOME PARAMETERS, THEN ONLY PASS AN ARROW FUNCTION OR ELSE DON'T DO IT.
+          onClick={() => skipTrackHandler("back")}
+        />
 
         {playing ? (
           <FaPause onClick={playSongHandler} className="play" size="1.6em" />
         ) : (
           <FaPlay onClick={playSongHandler} className="play" size="1.6em" />
         )}
-        <FaAngleRight className="skip-forward" size="2em" />
+        <FaAngleRight
+          className="skip-forward"
+          size="2em"
+          onClick={() => skipTrackHandler("next")}
+        />
       </div>
       {/* onTimeUpdate runs everytime the time updates in the audio track. */}
 

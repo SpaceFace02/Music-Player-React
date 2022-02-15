@@ -12,11 +12,14 @@
   width: 50%;
   input {
     width: 100%;
-    padding: 1rem 0rem;
+    -webkit-appearance: none;
+    cursor: pointer;
+    background: transparent;
   }
   p {
     padding: 0.5rem;
     width: 25%;
+    text-align: center;
   }
 }
 
